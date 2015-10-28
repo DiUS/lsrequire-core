@@ -1,0 +1,24 @@
+{
+  "name": "lsrequire-core",
+  "version": "1.0.0",
+  "description": "Makes using require enjoyable",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DiUS/lsrequire-core.git"
+  },
+  "keywords": [
+    "requirejs",
+    "lsrequire",
+    "require"
+  ],
+  "author": "DiUS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DiUS/lsrequire-core/issues"
+  },
+  "homepage": "https://github.com/DiUS/lsrequire-core"
+}

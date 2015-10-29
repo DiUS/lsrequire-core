@@ -1,6 +1,6 @@
 {
   "name": "lsrequire-core",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Makes using require enjoyable",
   "main": "index.js",
   "scripts": {
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/DiUS/lsrequire-core",
   "dependencies": {
+    "app-root-path": "^1.0.0",
     "lodash": "^3.10.1"
   }
 }

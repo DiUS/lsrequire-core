@@ -1,16 +1,20 @@
 var fs = require('fs'),
     path = require('path'),
+    appRootPath = require('app-root-path').path + "/",
     _ = require('lodash');
 
 var defaultConfig = {
-  prodSourceRoot: __dirname + '/../../app',
-  testSourceRoot: __dirname + '/../../spec',
+  prodSourceRoot: 'app',
+  testSourceRoot: 'spec',
   requireSymbol: "$"
 };
 
 function LSRequireCore(_config) {
 
   var config = _.defaults({}, _config, defaultConfig);
+  config.prodSourceRoot = appRootPath + config.prodSourceRoot;
+  config.testSourceRoot = appRootPath + config.testSourceRoot;
+
   var allRequireableFiles = dirTree(config.prodSourceRoot, dirTree(config.testSourceRoot));
 
   function isProdSource(file) {

@@ -12,6 +12,16 @@
     "require"
   ],
   "author": "DiUS",
+  "contributors": [
+    {
+      "name" : "Matt Fielding",
+      "email" : "mfielding@dius.com.au"
+    },
+    {
+      "name" : "George Papas",
+      "email" : "george.papas@gmail.com"
+    }
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",

@@ -26,6 +26,10 @@ function LSRequireCore(_config) {
   }
 
   function dirTree(directory, destination) {
+    if(directory == null) {
+      return [];
+    }
+
     destination = destination || {};
 
     var stats = fs.lstatSync(directory),

@@ -12,10 +12,13 @@ var defaultConfig = {
 function LSRequireCore(_config) {
 
   var config = _.defaults({}, _config, defaultConfig);
-  config.prodSourceRoot = appRootPath + config.prodSourceRoot;
 
-  if(config.testSourceRoot) {
-    config.testSourceRoot = appRootPath + config.testSourceRoot;
+  if(config.prodSourceRoot.indexOf("/") != 0) {
+    config.prodSourceRoot = appRootPath + config.prodSourceRoot;
+  }
+
+  if(config.testSourceRoot && config.testSourceRoot.indexOf("/") != 0) {
+    config.testSourceRoot = appRootPath + config.prodSourceRoot;
   }
 
   var allRequireableFiles = dirTree(config.prodSourceRoot, dirTree(config.testSourceRoot));

@@ -18,7 +18,7 @@ function LSRequireCore(_config) {
   }
 
   if(config.testSourceRoot && config.testSourceRoot.indexOf("/") != 0) {
-    config.testSourceRoot = appRootPath + config.prodSourceRoot;
+    config.testSourceRoot = appRootPath + config.testSourceRoot;
   }
 
   var allRequireableFiles = dirTree(config.prodSourceRoot, dirTree(config.testSourceRoot));

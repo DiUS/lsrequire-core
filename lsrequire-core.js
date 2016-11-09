@@ -6,7 +6,8 @@ var fs = require('fs'),
 var defaultConfig = {
   prodSourceRoot: 'app',
   testSourceRoot: 'spec',
-  requireSymbol: "$"
+  requireSymbol: "$",
+  enableSymlinks: true
 };
 
 function LSRequireCore(_config) {
@@ -43,6 +44,19 @@ function LSRequireCore(_config) {
           path: directory,
           name: path.basename(directory)
         };
+
+    if (stats.isSymbolicLink()) {
+      if(config.enableSymlinks) {
+        var realPath = fs.realpathSync(directory);
+        stats        = fs.lstatSync(realPath);
+        info         = {
+          path: realPath,
+          name: path.basename(realPath)
+        };
+      } else {
+        return;
+      }
+    }
 
     if (stats.isDirectory()) {
       fs.readdirSync(directory).map(function (child) {
